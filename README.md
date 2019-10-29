@@ -31,4 +31,11 @@ Important is that you have the emboss environment installed using coda. The scri
 ### Plotting 
 
 Plotting is run seperately as cannot open X11 on the nodes 
+Input is the tree output from the previous script
 
+
+```
+
+~/.conda/envs/EMBOSS/bin/python /home/xabras/Scripts/Phylo_analysis/Plotting_PhylipOut.py Epidermidis.consensus_Neighbour.tree
+
+```
