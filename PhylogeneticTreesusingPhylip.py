@@ -122,10 +122,10 @@ def main():
     distout=runDNAdist(seqout,outbase)
     (neighout, tree)=runNeighbour(distout,outbase)
     consensusNeighbourtree=runConsenseNeighbour(outbase,neighout, tree)
-    runCreatePhyloTreeNeighbour(consensusNeighbourtree,outbase)
+    #runCreatePhyloTreeNeighbour(consensusNeighbourtree,outbase)
     (DNAparsOut, parstree)=runDNAPars(seqout,outbase)
     consensusParstree=runConsenseParsimony(DNAparsOut,parstree,outbase)
-    runCreatePhyloTreeParsimony(consensusParstree,outbase)
+    #runCreatePhyloTreeParsimony(consensusParstree,outbase)
 
 
 main()
