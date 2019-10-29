@@ -2,7 +2,8 @@
 
 Runs the phylogenetic analysis using Phylip, 
 
-First step is to run the multiple alignment of the sequences of interest. Use the code below for this 
+First step is to run the multiple alignment of the sequences of interest. Use the code below for this, using muscle alignment
+
 
 ```
 
@@ -15,14 +16,17 @@ Important is that you have the emboss environment installed using coda. The scri
 * dnadist 
 * neighbour 
 * consense 
-* Plotting
 * dnapars
 * consense
-* plotting 
 
 
 ```
 
-~/.conda/envs/EMBOSS/bin/python /jumbo/WorkingDir/B19-057/Code/Phylips.py Aureus.phyi 
+~/.conda/envs/EMBOSS/bin/python /home/xabras/Scripts/Phylo_analysis/PhylogeneticTreesusingPhylip.py Aureus.phyi 
 
 ```
+
+### Plotting 
+
+Plotting is run seperately as cannot open X11 on the nodes 
+
