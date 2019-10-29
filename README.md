@@ -1,4 +1,4 @@
-# PhylogeneticAnalysis
+# Phylogenetic Analysis
 
 Runs the phylogenetic analysis using Phylip, 
 
@@ -6,6 +6,8 @@ First step is to run the multiple alignment of the sequences of interest. Use th
 
 
 ```
+
+~/Programs/Muscle/muscle3.8.31_i86linux32 -in Epidermidis_All.fasta -out Epidermidis -phyiout Epidermidis.phyi  -physout Epidermidis.phys
 
 ```
 
