@@ -72,17 +72,6 @@ def runConsenseNeighbour(outbase,neighout, tree):
     stdout, stderr = consensus_cline()
     return consensusNeighbourtree
 
-def runCreatePhyloTreeNeighbour(consensusNeighbourtree,outbase):
-    """
-    Plot the PhyloConsensusNeighbour tree
-    """
-    PDFout = outbase + "_NeighbourTree.pdf"
-    tree = Phylo.read(consensusNeighbourtree, 'newick')
-    Phylo.draw(tree, do_show=False)
-    pylab.savefig(PDFout)
-    plt.close()
-
-
 def runDNAPars(seqout,outbase):
     """
     Here we run DNA Parsimony on the seqboot out
@@ -106,26 +95,28 @@ def runConsenseParsimony(DNAparsOut,parstree,outbase):
     stdout, stderr = consensus_cline()
     return consensusParstree
 
-def runCreatePhyloTreeParsimony(consensusParstree,outbase):
-    """
-    Plot the Parsimony Tree
-    """
-    PDFout = outbase + "_Parsimony_Tree.pdf"
-    tree = Phylo.read(consensusParstree, 'newick')
-    Phylo.draw(tree, do_show=False)
-    pylab.savefig(PDFout)
-    plt.close()
 
+def addBranchlengthParsimony(phylipfile,parstree,outbase):
+    """
+    This part adds the branch length to the phylogenetic tree
+    """
+    print "Adding Branchlength for the phylogenetic tree"
+    ConsensusParsBranchlengthtree = outbase + ".consensus_Parsimony_BranchLength.tree"
+    ConsensusParsFromfdml =  outbase + ".consensus_Parsimony_BranchLength.fdml"
+    command = "fdnaml -sequence %s -intreefile %s -outtreefile %s -outfile %s" %(phylipfile,parstree,ConsensusParsBranchlengthtree,ConsensusParsFromfdml)
+    os.system(command)
+    return ConsensusParsBranchlengthtree
+    
 def main():
     (phylipfile,outbase)=readphylipfile()
     seqout=runSeqBoot(phylipfile,outbase)
     distout=runDNAdist(seqout,outbase)
     (neighout, tree)=runNeighbour(distout,outbase)
     consensusNeighbourtree=runConsenseNeighbour(outbase,neighout, tree)
-    #runCreatePhyloTreeNeighbour(consensusNeighbourtree,outbase)
     (DNAparsOut, parstree)=runDNAPars(seqout,outbase)
     consensusParstree=runConsenseParsimony(DNAparsOut,parstree,outbase)
-    #runCreatePhyloTreeParsimony(consensusParstree,outbase)
+    ConsensusParsBranchlengthtree=addBranchlengthParsimony(phylipfile,parstree,outbase)
+
 
 
 main()
