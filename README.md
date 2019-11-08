@@ -28,6 +28,14 @@ Important is that you have the emboss environment installed using coda. The scri
 
 ```
 
+
+### 
+
+Adding the branch length, 
+There is an issue of adding the branch length to the consensus seperately. There is an issue in fdnaml so for some reason it removes some samples. Therefore we use dnaml seperately. Just type dnaml,input the original alignment from muscle, and change U. Then create the outtree which now contains branch length. 
+
+
+
 ### Plotting 
 
 Plotting is run seperately as cannot open X11 on the nodes 
@@ -39,3 +47,5 @@ Input is the tree output from the previous script
 ~/.conda/envs/EMBOSS/bin/python /home/xabras/Scripts/Phylo_analysis/Plotting_PhylipOut.py Epidermidis.consensus_Neighbour.tree
 
 ```
+
+
