@@ -14,7 +14,10 @@ import seaborn as sns
 import numpy as np
 
 
-# Run like pythonn DistanceMatrix_fromPhylipMA.py file.phyi
+# Run like python DistanceMatrix_fromPhylipMA.py file.phyi
+
+
+# Calculates the percentage difference, say we have one difference between two sequences at length 10, the distance will become 1/10 = 0.1
 
 def readphylipfile():
     """
