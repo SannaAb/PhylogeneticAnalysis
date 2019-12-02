@@ -49,3 +49,18 @@ Input is the tree output from the previous script
 ```
 
 
+# Distance matrix 
+
+It might be of interest to check the distance between the different sequences. For this we can use the distance matrix based on identity. so if we have 1 change in one sequence the distance between the two sequences will be 1/10. 
+The following script calculates the distance between multiple sequences from the phyi format. Output is the lower triangle distance matrix and a heatmap that plots this distance matrix. 0 means ofcourse no change. You might need the Correct conda environment for the packages 
+
+Run it as follows 
+
+
+```
+
+# important as the input filenames ends with phyi as we are using the prefix of this string
+
+python DistanceMatrix_fromPhylipMA.py in.phyi 
+
+```
